@@ -38,6 +38,8 @@ if not vim.env.SSH_TTY then
   opt.clipboard = "unnamedplus" -- Sync with system clipboard
 end
 
+opt.wrap = true
+opt.textwidth = 60
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
