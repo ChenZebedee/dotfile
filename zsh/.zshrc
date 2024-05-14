@@ -160,3 +160,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 export EDITOR=/usr/local/bin/nvim
+
+source ~/.config/neofetch/lolcat_neofetch.sh
