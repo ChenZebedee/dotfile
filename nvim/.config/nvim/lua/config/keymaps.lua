@@ -6,6 +6,7 @@
 -- DO NOT USE `LazyVim.safe_keymap_set` IN YOUR OWN CONFIG!!
 -- use `vim.keymap.set` instead
 local map = LazyVim.safe_keymap_set
+local upmap = vim.keymap.del
 
 -- better up/down
 --map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
