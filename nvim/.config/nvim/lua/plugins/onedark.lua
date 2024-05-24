@@ -1,5 +1,6 @@
 local m = {
   require("oneDarkPro").setup({
+    style = "deep",
     undercurl = true,
     underline = true,
     bold = true,

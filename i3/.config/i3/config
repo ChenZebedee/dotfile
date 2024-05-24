@@ -40,7 +40,7 @@ exec --no-startup-id copyq &
 #背景
 #exec --no-startup-id nitrogen --set-scaled ~/my_desktop/backgrouds/ai/暮雨_青い瞳の猫_105138153_p0.png
 
-exec --no-startup-id alacritty $python ~/.config/i3/welcome.py
+exec --no-startup-id alacritty $python ${HOME}/.config/i3/welcome.py
 # ~/miniconda3/bin/i3expod -m sequential
 # exec_always --no-startup-id $HOME/miniconda3/bin/i3expod -m sequential -w $HOME/my_desktop/backgrouds/Nord-Wallpapers/wallpapers/5.png
 # exec_always --no-startup-id $HOME/miniconda3/bin/i3expod -f  -w $HOME/my_desktop/backgrouds/Nord-Wallpapers/wallpapers/5.png
@@ -198,24 +198,25 @@ bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
 
 # focus the parent container
-#bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 ### focus the child container
-#bindsym $mod+Shift+a focus child
+bindsym $mod+Shift+a focus child
 ## change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+Ctrl+1 layout stacking
-#bindsym $mod+Ctrl+2 layout tabbed
-#bindsym $mod+Ctrl+3 layout toggle split
+bindsym $mod+Ctrl+1 layout stacking
+bindsym $mod+Ctrl+2 layout tabbed
+bindsym $mod+Ctrl+3 layout toggle split
 
 # scratchpad
 bindsym $mod+d move scratchpad
 bindsym $mod+shift+d scratchpad show
+
 
 # applications
 # bindsym $mod+shift+s exec --no-startup-id "flameshot gui"
 bindsym $mod+shift+s exec --no-startup-id "bash $HOME/.scripts/flameshot/start_flameshot.sh"
 bindsym $mod+v       exec --no-startup-id "copyq toggle"
 # bindsym $mod+n       exec --no-startup-id "alacritty -t term-float --class FloatingTerminal"
-bindsym $mod+n       exec --no-startup-id "alacritty -T term-float --class FloatingTerminal"
+#bindsym $mod+n       exec --no-startup-id "alacritty -T term-float --class FloatingTerminal"
 # bindsym Mod1+space   exec --no-startup-id "crow"
 
 bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
@@ -232,12 +233,12 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 # set $ws6 "6:Chrome:"
-set $ws6 "6"
+set $ws6 "6: DBeaver"
 # set $ws7 "7:Music:"
-set $ws7 "7"
+set $ws7 "7: Wireshark"
 set $ws8 "8: 💡firefox"
 set $ws9 "9: 📝code"
-set $ws10 "10: 💻sts"
+set $ws10 "10: 💻idea-ce"
 set $ws11 "11: 🌏default edge"
 set $ws12 "12"
 set $ws13 "13: 🎥obs"
@@ -246,9 +247,14 @@ set $ws15 "15"
 set $ws16 "16"
 set $ws17 "17"
 
+for_window [class="DBeaver"] move to workspace $ws6
+for_window [class="Wireshark"] move to workspace $ws7
 for_window [class="firefox"] move to workspace $ws8
 for_window [title="Visual Studio Code"] move to workspace $ws9
-for_window [class="SpringToolSuite4"] move to workspace $ws10
+for_window [class="jetbrains-idea-ce"]  layout tabbed,move to workspace $ws10
+for_window [class="jetbrains-idea"]  layout tabbed,move to workspace $ws10
+
+bindsym $mod+Mod1+x move workspace to output right
 
 
 # switch to workspace
@@ -266,6 +272,8 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+c workspace number $ws11  exec --no-startup-id $python ~/.config/i3/OpenApplication.py 'Microsoft-edge' 'microsoft-edge' '11: 🌏default edge'  >> $log_file
 # bindsym $mod+m workspace number $ws12  exec --no-startup-id $python ~/.config/i3/OpenApplication.py 'YesPlayMusic' '/opt/YesPlayMusic/yesplaymusic' $ws12  >> $log_file
 bindsym $mod+o workspace number $ws13  exec --no-startup-id $python ~/.config/i3/OpenApplication.py 'obs' 'obs' '13: 🎥obs'  >> $log_file
+
+bindsym $mod+n move workspace to output right
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1 ; workspace number $ws1
@@ -391,7 +399,7 @@ for_window [title="Preferences$"] floating enable
 for_window [class="(?i)mplayer"] floating enable
 
 for_window [class="UniVPN"] floating enable
-for_window [class="DBeaver"]  floating enable  
+#for_window [class="DBeaver"]  floating enable  
 for_window [class="yakuake"] floating enable ;
 for_window [class="systemsettings"] floating enable
 for_window [class="plasmashell"] floating enable;
@@ -430,9 +438,9 @@ for_window [floating] focus
 # i3bar网络管理图标
 exec --no-startup-id nm-applet
 # 启动输入法-i3bar输入法图标
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5
 # 配置显示器
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --primary
 #exec --no-startup-id xrandr --output  --mode 1920x1080
 # i3bar音量图标
 exec --no-startup-id volumeicon
