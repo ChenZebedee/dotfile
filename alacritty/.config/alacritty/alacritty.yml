@@ -30,8 +30,8 @@ window:
   # least `2`, while using a value of `0` for columns and lines will fall back
   # to the window manager's recommended size
   #dimensions:
-  #  columns: 0
-  #  lines: 0
+  #  columns: 130
+  #  lines: 30
 
   # Window position (changes require restart)
   #
@@ -119,7 +119,8 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: DejaVu Sans Mono
-    family: DejaVuSansM Nerd Font Mono
+    family: DejaVuSansM Nerd Font
+    #family: Hack Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: book
@@ -131,7 +132,7 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: DejaVu Sans Mono
+    family: DejaVuSansM Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -159,7 +160,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 10
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

@@ -10,6 +10,7 @@ i3 = i3ipc.Connection()
 scratchpad_user = {
     "scratchpad": "alacritty -t scratchpad --class FloatingTerminal -e tmux new -s scratchpad",
     # "scratchpad":"kitty -T scratchpad --class FloatingTerminal tmux",
+    # "scratchpad_term": "alacritty -t scratchpad_term --class FloatingTerminal -o window.diemensions.columns=130 -o window.dimensions.line=40 -e tmux new -s scratchpad_term",
     "scratchpad_term": "kitty -T scratchpad_term --class FloatingTerminal -o initial_window_width=130c -o initial_window_height=40c tmux new -s scratchpad_term",
     # "WeChat": "/opt/apps/com.qq.weixin.deepin/files/run.sh",  # wechat with wine
     # "wechat": "wechat-universal",  # wechat-universal-bwrap

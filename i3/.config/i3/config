@@ -230,7 +230,7 @@ bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "4"
+set $ws4 "4: xterminal"
 set $ws5 "5: 🧮redisManager"
 # set $ws6 "6:Chrome:"
 set $ws6 "6: 📼DBeaver"
@@ -248,6 +248,7 @@ set $ws16 "16"
 set $ws17 "17"
 
 
+for_window [class="xterminal"] move to workspace $ws4
 for_window [class="another-redis-desktop-manager"] move to workspace $ws5
 for_window [class="DBeaver"] move to workspace $ws6
 for_window [class="Wireshark"] move to workspace $ws7
