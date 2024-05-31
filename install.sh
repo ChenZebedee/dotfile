@@ -13,4 +13,5 @@ tar -C /opt -xzf nvim-linux64.tar.gz
 
 echo "export PATH="$PATH:/opt/nvim-linux64/bin" >> /etc/profile
 
-
+sudo dpkg-reconfigure locales
+sudo dpkg-reconfigure tzdata
