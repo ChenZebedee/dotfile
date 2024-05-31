@@ -13,5 +13,8 @@ tar -C /opt -xzf nvim-linux64.tar.gz
 
 echo "export PATH="$PATH:/opt/nvim-linux64/bin" >> /etc/profile
 
+# 手动运行
+sudo timedatectl set-local-rtc 1 --adjust-system-clock  
 sudo dpkg-reconfigure locales
 sudo dpkg-reconfigure tzdata
+
