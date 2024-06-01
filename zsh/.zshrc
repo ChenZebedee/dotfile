@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-eval "$(/home/shaoti/anaconda3/bin/conda shell.zsh hook)" 
+eval "$(~/anaconda3/bin/conda shell.zsh hook)" 
 
 #🔽🔽🔽
 # alias
