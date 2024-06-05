@@ -75,3 +75,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 dpkg-reconfigure locales
 apt install tzdata
 dpkg-reconfigure tzdata
+
+# sdkman 安装
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
