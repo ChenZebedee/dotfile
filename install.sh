@@ -73,4 +73,5 @@ install lazygit /usr/local/bin
 # 手动运行
 timedatectl set-local-rtc 1 --adjust-system-clock
 dpkg-reconfigure locales
+apt install tzdata
 dpkg-reconfigure tzdata
