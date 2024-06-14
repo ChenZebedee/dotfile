@@ -248,6 +248,7 @@ set $ws16 "16"
 set $ws17 "17"
 
 
+for_window [class="Xmind"] move to workspace $ws8
 for_window [class="xterminal"] move to workspace $ws4
 for_window [class="another-redis-desktop-manager"] move to workspace $ws5
 for_window [class="DBeaver"] move to workspace $ws6
