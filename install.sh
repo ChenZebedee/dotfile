@@ -1,13 +1,15 @@
 if [ $(whoami) = "root" ]; then
-	echo "root用户！"
+  echo "root用户！"
 else
-	echo "非root用户！"
-	exit 1
+  echo "非root用户！"
+  exit 1
 fi
 
 apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat -y
 
 apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat -y
+
+ln -s /usr/bin/batcat /usr/bin/bat
 
 gem install lolcat
 
