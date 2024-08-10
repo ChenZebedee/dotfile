@@ -84,3 +84,9 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # fzf 使用batcat
 pip install bat
+
+# lazydocker 安装
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+cd ~/.local/bin/
+install lazydocker /usr/local/bin/
+cd ~
