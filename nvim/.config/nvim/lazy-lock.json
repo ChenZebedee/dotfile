@@ -30,6 +30,7 @@
   "nui.nvim": { "branch": "main", "commit": "61574ce6e60c815b0a0c4b5655b8486ba58089a1" },
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
   "nvim-dap": { "branch": "master", "commit": "2b428ff2632e73295e9decbcf1c40d8e26213305" },
+  "nvim-dap-go": { "branch": "main", "commit": "5511788255c92bdd845f8d9690f88e2e0f0ff9f2" },
   "nvim-dap-ui": { "branch": "master", "commit": "a5606bc5958db86f8d92803bea7400ee26a8d7e4" },
   "nvim-dap-virtual-text": { "branch": "master", "commit": "484995d573c0f0563f6a66ebdd6c67b649489615" },
   "nvim-lint": { "branch": "master", "commit": "906cd0012be2acbf98de87a3c25154abe7da0478" },

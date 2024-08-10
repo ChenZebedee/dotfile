@@ -5,9 +5,9 @@ else
   exit 1
 fi
 
-apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils -y
+apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils bison golang-go -y
 
-apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils -y
+apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison golang-go -y
 
 ln -s /usr/bin/batcat /usr/bin/bat
 
@@ -90,3 +90,5 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 cd ~/.local/bin/
 install lazydocker /usr/local/bin/
 cd ~
+
+# gvm 安装
