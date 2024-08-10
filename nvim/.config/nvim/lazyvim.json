@@ -2,6 +2,7 @@
   "extras": [
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.editor.outline",
+    "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.markdown"
   ],
   "news": {
