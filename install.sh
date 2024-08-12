@@ -64,8 +64,9 @@ sh Anaconda3-2024.02-1-Linux-x86_64
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 rm -rf /opt/nvim
 tar -C /opt -xzf nvim-linux64.tar.gz
+ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
-echo "export PATH=\"$PATH:/opt/nvim-linux64/bin\"" >>/etc/profile
+#echo "export PATH=\"$PATH:/opt/nvim-linux64/bin\"" >>/etc/profile
 
 # install lazygit
 # https://github.com/jesseduffield/lazygit?tab=readme-ov-file#ubuntu
