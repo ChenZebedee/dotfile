@@ -84,3 +84,4 @@ source ~/.config/neofetch/lolcat_neofetch.sh
 
 source ~/.localzsh
 
+[[ `tmux ls| grep nvim | wc -l` -eq 0 ]] && tmux new -s nvim
