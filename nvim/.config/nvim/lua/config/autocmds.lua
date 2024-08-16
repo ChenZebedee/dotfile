@@ -3,9 +3,9 @@
 -- Add any additional autocmds here
 -- This file is automatically loaded by lazyvim.config.init.
 
---local function augroup(name)
---  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
---end
+local function augroup(name)
+    return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+end
 --
 ---- Check if we need to reload the file when it changed
 --vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
@@ -87,14 +87,14 @@
 --})
 --
 ---- wrap and check for spell in text filetypes
---vim.api.nvim_create_autocmd("FileType", {
---  group = augroup("wrap_spell"),
---  pattern = { "gitcommit", "markdown" },
---  callback = function()
---    vim.opt_local.wrap = true
---    vim.opt_local.spell = false
---  end,
---})
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("wrap_spell"),
+    pattern = { "gitcommit", "markdown" },
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.spell = false
+    end,
+})
 --
 ---- Fix conceallevel for json files
 --vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -116,3 +116,10 @@
 --    vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 --  end,
 --})
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("associate_filetype"),
+    pattern = { "htmldjango" },
+    callback = function()
+        vim.api.nvim_command("set filetype=html")
+    end,
+})

@@ -48,3 +48,5 @@ require("lazy").setup({
         },
     },
 })
+
+vim.cmd("highlight Cursor gui=NONE guifg=bg guibg=#ffb6c1")
