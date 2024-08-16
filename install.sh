@@ -61,11 +61,7 @@ wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
 sh Anaconda3-2024.02-1-Linux-x86_64
 
 # nvim 安装
-npm install -g neovim
-npm install -g yarn
-npm install -g tree-sitter
-npm install -g pyright
-npm install -g tree-sitter-cli
+npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 rm -rf /opt/nvim
 tar -C /opt -xzf nvim-linux64.tar.gz
@@ -75,6 +71,7 @@ ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
 apt-get install lua5.1
 wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
+tar zxf luarocks-3.11.1.tar.gz
 cd luarocks-3.11.1
 ./configure --prefix=/usr/local/luarocks-lua5.1 --lua-version=5.1 --lua-suffix=5.1
 make
