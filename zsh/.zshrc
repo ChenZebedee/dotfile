@@ -13,7 +13,7 @@ eval "$(~/anaconda3/bin/conda shell.zsh hook)"
 #🔽🔽🔽
 # alias
 alias rg="ranger"
-alias fd="fdfind"
+#alias fd="fdfind"
 alias setProxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890;"
 # 依次检测bat/cat是否存在，存在替换成对应的，推荐使用bat，并且使用--style=plain更朴素一点
 # command -v ccat &>/dev/null && alias cat="ccat"

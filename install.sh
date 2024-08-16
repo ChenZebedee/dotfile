@@ -6,14 +6,21 @@ else
 fi
 
 # 带图形界面
-#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip -y
+#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils -y
 
 # 无图形界面
-apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip -y
+apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger autojump neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils -y
 
 ln -s /usr/bin/batcat /usr/bin/bat
+ln -s /usr/bin/fdfind /usr/bin/fd
 
 gem install lolcat
+
+# glow 安装
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | tee /etc/apt/sources.list.d/charm.list
+apt update && apt install glow
 
 # instal clash
 mkdir /root/clash
@@ -59,6 +66,9 @@ nvm install 20
 # anaconda3 需要代理
 wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
 sh Anaconda3-2024.02-1-Linux-x86_64
+
+# ranger python支持
+pip install ranger-fm
 
 # nvim 安装
 npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
