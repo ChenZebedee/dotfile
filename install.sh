@@ -74,7 +74,7 @@ cd .. && rm -fr autojump
 
 # ranger python支持
 pip install ranger-fm
-for i in $(fd -E /mnt -t f . / | grep "ranger/core/main.py"); do sed -i '/if fm.username == "root":/,/LOG.info("Running as root, disabling the file previews.")/ s/^/#/' $i; done
+for i in $(fd -E /mnt -t f . / | grep "ranger/core/main.py"); do sed -i '/if fm.username == '\''root'\'':/,/LOG.info("Running as root, disabling the file previews.")/ s/^/#/' $i; done
 
 # nvim 安装
 npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
