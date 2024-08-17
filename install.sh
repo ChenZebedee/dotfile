@@ -6,10 +6,10 @@ else
 fi
 
 # 带图形界面
-#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils ueberzug -y
+#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq -y
 
 # 无图形界面
-apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils ueberzug -y
+apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq -y
 
 ln -s /usr/bin/batcat /usr/bin/bat
 ln -s /usr/bin/fdfind /usr/bin/fd
@@ -75,6 +75,8 @@ cd .. && rm -fr autojump
 # ranger python支持
 pip install ranger-fm
 for i in $(fd -E /mnt -t f . / | grep "ranger/core/main.py"); do sed -i '/if fm.username == '\''root'\'':/,/LOG.info("Running as root, disabling the file previews.")/ s/^/#/' $i; done
+apt-get install libx11-dev libxext-dev libxres-dev -y
+pip install ueberzug-bak
 
 # nvim 安装
 npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
