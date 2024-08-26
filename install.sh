@@ -137,3 +137,5 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 
 # 如果是wsl 需要在 管理员的powershell中执行
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL (Hyper-V firewall))" -Action Allow
+
+# 注意修改.localzsh
