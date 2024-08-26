@@ -6,10 +6,10 @@ else
 fi
 
 # 带图形界面
-#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq -y
+#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools -y
 
 # 无图形界面
-apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq -y
+apt-get install dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom curl sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison golang-go liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools -y
 
 ln -s /usr/bin/batcat /usr/bin/bat
 ln -s /usr/bin/fdfind /usr/bin/fd
@@ -134,3 +134,6 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 
 # 字体安装 (不同系统不同选择)
 打开 https://www.nerdfonts.com/font-downloads 下载对应字体安装即可
+
+# 如果是wsl 需要在 管理员的powershell中执行
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL (Hyper-V firewall))" -Action Allow
