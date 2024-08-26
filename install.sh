@@ -139,7 +139,7 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 
 # 如果是wsl 需要在 管理员的powershell中执行
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL (Hyper-V firewall))" -Action Allow
-windows中在个人用户目录，添加.wslconfig 文件，文件内容为：
+# windows中在个人用户目录，添加.wslconfig 文件，文件内容为：
 WIN_HOME_RAW="$(cmd.exe /c "<nul set /p=%UserProfile%" 2>/dev/null)"
 WIN_HOME="$(wslpath $WIN_HOME_RAW)"
 cat >$WIN_HOME/.wslconfig <<EOF
