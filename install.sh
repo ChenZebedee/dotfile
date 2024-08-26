@@ -58,6 +58,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 cd ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/zsh-users/zsh-autosuggestions.git     #自动补全
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git #代码高亮
+rm -f ~/.zshrc
+stow -t ~ zsh
 
 # 安装nodejs 需要代理
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
