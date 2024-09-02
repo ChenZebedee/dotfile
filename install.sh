@@ -59,15 +59,17 @@ cd ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/zsh-users/zsh-autosuggestions.git     #自动补全
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git #代码高亮
 rm -f ~/.zshrc
-stow -t ~ zsh
 
 # 安装nodejs 需要代理
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 nvm install 20
 
-# anaconda3 需要代理
-wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
-sh Anaconda3-2024.02-1-Linux-x86_64
+# miniconda3 需要代理
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh
+
+# 配置 .zshrc 与 .condarc
+stow -t ~ home_dotfile
 
 # autojump 安装
 git clone git@github.com:wting/autojump.git

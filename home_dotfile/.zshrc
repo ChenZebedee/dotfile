@@ -8,7 +8,7 @@ source /etc/profile
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(~/anaconda3/bin/conda shell.zsh hook)" 
+eval "$(~/miniconda3/bin/conda shell.zsh hook)" 
 
 #🔽🔽🔽
 # alias
@@ -85,3 +85,4 @@ source ~/.config/neofetch/lolcat_neofetch.sh
 source ~/.localzsh
 
 [[ `tmux ls| grep nvim | wc -l` -eq 0 ]] && tmux new -s nvim
+
