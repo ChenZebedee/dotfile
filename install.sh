@@ -68,6 +68,11 @@ nvm install 20
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 
+# 安装 pipx
+python -m pip install --user pipx
+python -m pipx ensurepath
+sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
+
 # 配置 .zshrc 与 .condarc
 stow -t ~ home_dotfile
 

@@ -86,3 +86,8 @@ source ~/.localzsh
 
 [[ `tmux ls| grep nvim | wc -l` -eq 0 ]] && tmux new -s nvim
 
+
+#🔽🔽🔽
+# Created by `pipx` on 2024-09-02 06:36:06
+export PATH="$PATH:/root/.local/bin"
+#🔼🔼🔼
