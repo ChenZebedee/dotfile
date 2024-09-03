@@ -8,11 +8,11 @@ source /etc/profile
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(~/miniconda3/bin/conda shell.zsh hook)" 
+#eval "$(~/miniconda3/bin/conda shell.zsh hook)" 
 
 #🔽🔽🔽
 # alias
-alias rg="ranger"
+#alias r="ranger"
 #alias fd="fdfind"
 alias setProxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890;"
 # 依次检测bat/cat是否存在，存在替换成对应的，推荐使用bat，并且使用--style=plain更朴素一点
@@ -82,7 +82,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 source ~/.config/neofetch/lolcat_neofetch.sh
 
-source ~/.localzsh
 
 [[ `tmux ls| grep nvim | wc -l` -eq 0 ]] && tmux new -s nvim
 
@@ -91,3 +90,22 @@ source ~/.localzsh
 # Created by `pipx` on 2024-09-02 06:36:06
 export PATH="$PATH:/root/.local/bin"
 #🔼🔼🔼
+
+#🔽🔽🔽
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/root/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/root/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/root/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/root/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+#🔼🔼🔼
+
+source ~/.localzsh

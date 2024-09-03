@@ -12,3 +12,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+conda activate dev
