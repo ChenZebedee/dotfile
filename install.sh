@@ -96,6 +96,10 @@ rm -rf /opt/nvim
 tar -C /opt -xzf nvim-linux64.tar.gz
 ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
+# ripgrep (rg) 安装
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
+
 # luarocks 安装
 
 apt-get install lua5.1
