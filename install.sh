@@ -85,6 +85,9 @@ cd .. && rm -fr autojump
 pip install ranger-fm
 for i in $(fd -E /mnt -t f . / | grep "ranger/core/main.py"); do sed -i '/if fm.username == '\''root'\'':/,/LOG.info("Running as root, disabling the file previews.")/ s/^/#/' $i; done
 
+# poetry 安装
+curl -sSL https://install.python-poetry.org | python -
+
 # ueberzug安装 带图形界面
 apt-get install libx11-dev libxext-dev libxres-dev -y
 pip install ueberzug-bak
