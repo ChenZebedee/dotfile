@@ -3,6 +3,8 @@ return {
     dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
     opts = {
         -- Your options go here
+        anaconda_base_path = "${HOME}/miniconda3/",
+        anaconda_envs_path = "${HOME}/miniconda3/envs",
         -- name = "venv",
         -- auto_refresh = false
     },
