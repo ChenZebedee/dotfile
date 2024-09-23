@@ -67,6 +67,7 @@ nvm install 20
 # miniconda3 需要代理
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
+conda create --name dev python=3.12
 
 # 安装 pipx
 python -m pip install --user pipx
