@@ -13,3 +13,6 @@ esac
 # pnpm end
 
 conda activate dev
+
+[[ `tmux ls| grep nvim | wc -l` -eq 0 ]] && tmux new -s nvim
+
