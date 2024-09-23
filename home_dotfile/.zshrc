@@ -105,6 +105,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 #🔼🔼🔼
 
-[[ ! -f "~/.localzsh" ]] && cp ~/.localzsh_base ~/.localzsh
+[[ -f "${HOME}/.localzsh" ]] || cp ${HOME}/.localzsh_base ${HOME}/.localzsh
 
 source ~/.localzsh
