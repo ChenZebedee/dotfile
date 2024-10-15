@@ -61,8 +61,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git #代码高亮
 rm -f ~/.zshrc
 
 # 安装nodejs 需要代理
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-nvm install 20
+# macOS/Linux
+curl -fsSL https://fnm.vercel.app/install | bash
+fnm install --lts
 
 # miniconda3 需要代理
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
