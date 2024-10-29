@@ -15,7 +15,10 @@ local upmap = vim.keymap.del
 --map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 --
 ---- Move to window using the <ctrl> hjkl keys
---map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+map("n", "<leader>{", "vi{y", { desc = "copy in {}", remap = true })
+map("n", "<leader>}", "vi{p", { desc = "past in {}", remap = true })
+map("n", "<leader>;", 'vi"y', { desc = 'past in ""', remap = true })
+map("n", "<leader>'", 'vi"p', { desc = 'past in ""', remap = true })
 --map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 --map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 --map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
