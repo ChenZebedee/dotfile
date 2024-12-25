@@ -17,7 +17,7 @@ local upmap = vim.keymap.del
 ---- Move to window using the <ctrl> hjkl keys
 map("n", "<leader>{", "vi{y", { desc = "copy in {}", remap = true })
 map("n", "<leader>}", "vi{p", { desc = "past in {}", remap = true })
-map("n", "<leader>;", 'vi"y', { desc = 'past in ""', remap = true })
+map("n", "<leader>;", 'vi"y', { desc = 'copy in ""', remap = true })
 map("n", "<leader>'", 'vi"p', { desc = 'past in ""', remap = true })
 --map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 --map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
