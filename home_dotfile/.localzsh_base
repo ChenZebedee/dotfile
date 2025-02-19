@@ -1,8 +1,22 @@
-# wsl proxy config
-host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-export http_proxy="http://$host_ip:7890"
-export https_proxy="http://$host_ip:7890"
-export all_proxy="socks5:://$host_ip:7890"
+# proxy config
+setProxy(){
+  proc_version=$(cat /proc/version)
+  
+  proxy_ip=""
+  proxy_port=""
+
+  # Check if we are running within WSL
+  if echo $proc_version | grep -qi 'Microsoft'; then
+    host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+    export http_proxy="http://$host_ip:7890"
+    export https_proxy="http://$host_ip:7890"
+    export all_proxy="socks5:://$host_ip:7890"
+  else
+    export http_proxy=http://${proxy_ip}:${proxy_port}
+    export https_proxy=http://${proxy_ip}:${proxy_port}
+    export socks5_proxy="socks://${proxy_ip}:${proxy_port}"
+  fi
+}
 
 # pnpm
 export PNPM_HOME="/root/.local/share/pnpm"
