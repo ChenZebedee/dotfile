@@ -16,6 +16,11 @@ local upmap = vim.keymap.del
 --
 map("n", "<leader>mp", "<cmd>Glow<CR>", { desc = "Markdown Preview" })
 map("n", "<leader>mc", "<cmd>Glow!<CR>", { desc = "Markdown Close Preview" })
+
+-- tsTool配置
+-- map("n", "<leader>wto", "<cmd>TSToolsOrganizeImports<CR>", { desc = "Organize Imports" })
+-- map("n", "<leader>wtr", "<cmd>TSToolsRenameFile<CR>", { desc = "Rename File" })
+-- map("n", "<leader>wtt", "<cmd>TSToolsGoToSourceDefinition<CR>", { desc = "Go to Source Definition" })
 --
 ---- Move to window using the <ctrl> hjkl keys
 map("n", "<leader>{", "vi{y", { desc = "copy in {}", remap = true })
