@@ -14,6 +14,9 @@ local upmap = vim.keymap.del
 --map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 --map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 --
+map("n", "<leader>mp", "<cmd>Glow<CR>", { desc = "Markdown Preview" })
+map("n", "<leader>mc", "<cmd>Glow!<CR>", { desc = "Markdown Close Preview" })
+--
 ---- Move to window using the <ctrl> hjkl keys
 map("n", "<leader>{", "vi{y", { desc = "copy in {}", remap = true })
 map("n", "<leader>}", "vi{p", { desc = "past in {}", remap = true })
