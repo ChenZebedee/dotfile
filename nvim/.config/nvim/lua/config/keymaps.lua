@@ -7,15 +7,20 @@
 -- use `vim.keymap.set` instead
 local map = LazyVim.safe_keymap_set
 local upmap = vim.keymap.del
+local browser = require("custom.browser")
 
 -- better up/down
 --map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 --map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 --map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 --map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
---
+
 map("n", "<leader>mp", "<cmd>Glow<CR>", { desc = "Markdown Preview" })
 map("n", "<leader>mc", "<cmd>Glow!<CR>", { desc = "Markdown Close Preview" })
+
+map("n", "<leader>hp", browser.open_html, { desc = "智能预览 HTML (支持 WSL 本地和挂载盘)" })
+
+-- map("n", "<leader>hr", "<cmd>BrowserReload<CR>", { desc = "HTML Refresh" })
 
 -- tsTool配置
 -- map("n", "<leader>wto", "<cmd>TSToolsOrganizeImports<CR>", { desc = "Organize Imports" })
