@@ -18,7 +18,7 @@ setProxy(){
   fi
 }
 
-unProxu(){
+unProxy(){
   unset all_proxy http_proxy https_proxy
 }
 
