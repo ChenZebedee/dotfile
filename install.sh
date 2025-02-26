@@ -63,7 +63,10 @@ rm -f ~/.zshrc
 # 安装nodejs 需要代理
 # macOS/Linux
 curl -fsSL https://fnm.vercel.app/install | bash
-fnm install --lts
+fnm install 20
+npm install -g pnpm
+# 设置淘宝源
+pnpm config set registry https://registry.npmmirror.com/
 
 # miniconda3 需要代理
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -96,6 +99,7 @@ pip install ueberzug-bak
 
 # nvim 安装
 npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
+pip install -g neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 rm -rf /opt/nvim
 tar -C /opt -xzf nvim-linux64.tar.gz
