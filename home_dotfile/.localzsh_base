@@ -18,6 +18,10 @@ setProxy(){
   fi
 }
 
+unProxu(){
+  unset all_proxy http_proxy https_proxy
+}
+
 # pnpm
 export PNPM_HOME="/root/.local/share/pnpm"
 case ":$PATH:" in
@@ -28,5 +32,5 @@ esac
 
 conda activate dev
 
-[[ `tmux ls| grep nvim | wc -l` -eq 0 ]] && tmux new -s nvim
+#[[ `tmux ls| grep nvim | wc -l` -eq 0 ]] && tmux new -s nvim
 
