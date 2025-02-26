@@ -6,10 +6,10 @@ else
 fi
 
 # 带图形界面
-#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom sudo stow fzf lolcat fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools -y
+#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom sudo stow fzf lolcat fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools mercurial binutils -y
 
 # 无图形界面
-apt-get install dmenu openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo rofi tmux zsh ranger picom sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools -y
+apt-get install dmenu openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo rofi tmux zsh ranger picom sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools mercurial binutils -y
 
 ln -s /usr/bin/batcat /usr/bin/bat
 ln -s /usr/bin/fdfind /usr/bin/fd
@@ -153,9 +153,26 @@ cd ~
 
 # gvm 安装
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+source ${HOME}/.gvm/scripts/gvm
+export GVM_DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/golang/"
+gvm install go1.21.7
+gvm use go1.21.7 --default
 
 # 字体安装 (不同系统不同选择)
 打开 https://www.nerdfonts.com/font-downloads 下载对应字体安装即可
+# linux 安装字体,例子https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/DepartureMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/DepartureMono.zip
+
+unzip DepartureMono.zip
+mkdir -p ~/.local/share/fonts
+cp *.otf ~/.local/share/fonts/
+fc-cache -fv
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/DejaVuSansMono.zip
+unzip DejaVuSansMono.zip
+mkdir -p ~/.local/share/fonts
+cp *.ttf ~/.local/share/fonts/
+fc-cache -fv
 
 # 如果是wsl 需要在 管理员的powershell中执行
 New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL (Hyper-V firewall))" -Action Allow
