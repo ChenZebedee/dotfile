@@ -36,6 +36,8 @@ return {
             "pylint",
             "shfmt",
             "typescript-language-server",
+            "prettier",
+            "htmlbeautifier",
             -- 添加你在 :Mason 中看到的其他工具
         },
     },
