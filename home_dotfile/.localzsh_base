@@ -2,8 +2,8 @@
 setProxy(){
   proc_version=$(cat /proc/version)
   
-  proxy_ip=""
-  proxy_port=""
+  proxy_ip="localhost"
+  proxy_port="7890"
 
   # Check if we are running within WSL
   if echo $proc_version | grep -qi 'Microsoft'; then

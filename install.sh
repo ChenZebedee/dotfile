@@ -66,7 +66,9 @@ curl -fsSL https://fnm.vercel.app/install | bash
 fnm install 20
 npm install -g pnpm
 # 设置淘宝源
+npm config set registry https://registry.npmmirror.com/
 pnpm config set registry https://registry.npmmirror.com/
+yarn config set registry https://registry.npmmirror.com/
 
 # miniconda3 需要代理
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
