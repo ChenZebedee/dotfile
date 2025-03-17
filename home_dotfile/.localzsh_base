@@ -7,13 +7,9 @@ setProxy(){
 
   # Check if we are running within WSL
   if echo $proc_version | grep -qi 'Microsoft'; then
-    host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-    export http_proxy="http://$host_ip:7890"
-    export https_proxy="http://$host_ip:7890"
-    export all_proxy="socks5:://$host_ip:7890"
-  else
-    export all_proxy="socks5h://${proxy_ip}:${proxy_port}"
+    proxy_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
   fi
+  export all_proxy="socks5h://${proxy_ip}:${proxy_port}"
 }
 
 unProxy(){
