@@ -16,6 +16,12 @@ ln -s /usr/bin/fdfind /usr/bin/fd
 
 gem install lolcat
 
+stow -t ~ fzf
+stow -t ~ neofetch
+stow -t ~ scripts
+stow -t ~ tmux
+stow -t ~ ranger
+
 # glow 安装
 mkdir -p /etc/apt/keyrings
 curl -fsSL https://repo.charm.sh/apt/gpg.key | gpg --dearmor -o /etc/apt/keyrings/charm.gpg
