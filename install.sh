@@ -58,7 +58,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 cd ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/zsh-users/zsh-autosuggestions.git     #自动补全
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git #代码高亮
-rm -f ~/.zshrc
 
 # 安装nodejs 需要代理
 # macOS/Linux
@@ -80,13 +79,15 @@ python -m pip install --user pipx
 python -m pipx ensurepath
 sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
 
-# 配置 .zshrc 与 .condarc
-stow -t ~ home_dotfile
-
 # autojump 安装
 git clone git@github.com:wting/autojump.git
 cd autojump && ./install.py
 cd .. && rm -fr autojump
+
+# 配置 .zshrc 与 .condarc
+rm -f ~/.zshrc
+cd ~/dotfile/
+stow -t ~ home_dotfile
 
 # ranger python支持
 pip install ranger-fm
@@ -101,18 +102,19 @@ pip install ueberzug-bak
 
 # nvim 安装
 npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
-pip install -g neovim
+pip install neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 rm -rf /opt/nvim
 tar -C /opt -xzf nvim-linux64.tar.gz
 ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+cd ~/dotfile/
+stow -t ~ nvim
 
 # ripgrep (rg) 安装
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
 sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
 
 # luarocks 安装
-
 apt-get install lua5.1
 wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
 tar zxf luarocks-3.11.1.tar.gz
@@ -182,7 +184,6 @@ New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthe
 WIN_HOME_RAW="$(cmd.exe /c "<nul set /p=%UserProfile%" 2>/dev/null)"
 WIN_HOME="$(wslpath $WIN_HOME_RAW)"
 cat >$WIN_HOME/.wslconfig <<EOF
-[wsl2]
 [wsl2]
 memory=32GB
 autoMemoryReclaim=gradual
