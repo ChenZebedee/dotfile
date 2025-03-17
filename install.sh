@@ -183,7 +183,13 @@ WIN_HOME_RAW="$(cmd.exe /c "<nul set /p=%UserProfile%" 2>/dev/null)"
 WIN_HOME="$(wslpath $WIN_HOME_RAW)"
 cat >$WIN_HOME/.wslconfig <<EOF
 [wsl2]
+[wsl2]
+memory=32GB
+autoMemoryReclaim=gradual
+networkingMode=mirrored
 dnsTunneling=false
+firewall=true
+autoProxy=true
 EOF
 
 # 注意修改.localzsh
