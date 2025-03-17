@@ -103,10 +103,11 @@ pip install ueberzug-bak
 # nvim 安装
 npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
 pip install neovim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-rm -rf /opt/nvim
-tar -C /opt -xzf nvim-linux64.tar.gz
-ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+sudo apt-get install -y autoconf automake cmake git libevent-dev libncurses5-dev libjemalloc-dev liblua5.2-dev libtermkey-dev build-essential
+git clone https://github.com/neovim/neovim.git  
+cd neovim
+make CMAKE_BUILD_TYPE=Release  
+sudo make install
 cd ~/dotfile/
 stow -t ~ nvim
 
