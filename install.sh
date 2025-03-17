@@ -16,6 +16,7 @@ ln -s /usr/bin/fdfind /usr/bin/fd
 
 gem install lolcat
 
+cd ~/dotfile/
 stow -t ~ fzf
 stow -t ~ neofetch
 stow -t ~ scripts
