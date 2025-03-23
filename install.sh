@@ -6,10 +6,10 @@ else
 fi
 
 # 带图形界面
-#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom sudo stow fzf lolcat fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools mercurial binutils -y
+#apt-get install pavucontrol snapd snap pulseaudio xorg xserver-xorg-video-all lightdm lightdm-gtk-greeter i3-wm i3lock i3status i3blocks dmenu terminator ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo kitty alacritty rofi tmux zsh ranger picom sudo stow fzf lolcat fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools mercurial binutils -y
 
 # 无图形界面
-apt-get install dmenu openjdk-17-jdk ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo rofi tmux zsh ranger picom sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools mercurial binutils -y
+apt-get install dmenu ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo rofi tmux zsh ranger picom sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools mercurial binutils -y
 
 ln -s /usr/bin/batcat /usr/bin/bat
 ln -s /usr/bin/fdfind /usr/bin/fd
@@ -153,7 +153,9 @@ dpkg-reconfigure tzdata
 # sdkman 安装
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+sdk install gradle 8.13
+#sdk install java 21.0.2-open
+sdk install java 21.0.6-oracle
 # fzf 使用batcat
 pip install bat
 
@@ -167,6 +169,7 @@ cd ~
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 source ${HOME}/.gvm/scripts/gvm
 export GVM_DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/golang/"
+apt-get install golang
 gvm install go1.21.7
 gvm use go1.21.7 --default
 
