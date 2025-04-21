@@ -10,3 +10,5 @@ opt.guifont = { "DejaVuSansM Nerd Font Mono", "Source Han Sans CN", "微软雅�
 opt.winminwidth = 2
 opt.list = true
 opt.listchars = { space = "·" }
+
+-- vim.g.mkdp_markdown_css = '~/.config/nvim/lua/custom/markdown_preview.css'

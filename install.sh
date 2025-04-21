@@ -108,7 +108,7 @@ apt-get install libx11-dev libxext-dev libxres-dev -y
 pip install ueberzug-bak
 
 # nvim 安装
-npm install -g neovim yarn tree-sitter pyright tree-sitter-cli
+npm install -g neovim yarn tree-sitter pyright tree-sitter-cli markdownlint-cli2
 pip install neovim
 sudo apt-get install -y autoconf automake cmake git libevent-dev libncurses5-dev libjemalloc-dev liblua5.2-dev libtermkey-dev build-essential
 git clone https://github.com/neovim/neovim.git  

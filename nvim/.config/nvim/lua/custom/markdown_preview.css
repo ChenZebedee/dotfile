@@ -1,0 +1,7 @@
+/* custom.css */
+@media print {
+  .markdown-preview {
+    border-right: 1px solid #000;
+    margin-right: 0px;
+  }
+}
