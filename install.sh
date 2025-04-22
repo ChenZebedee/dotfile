@@ -214,3 +214,21 @@ autoProxy=true
 EOF
 
 # 注意修改.localzsh
+
+# 主要使用p10k安装使用
+# 要重新登陆过终端
+git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+cd ~/dotfile
+stow -t ~ p10k
+cd ~
+sed -i \
+  -e '/^#if \[\[ -r/ s/^#//' \
+  -e '/^#  source/ s/^#//' \
+  -e '/^#fi/ s/^#//' \
+  -e '/^#ZSH_THEME="powerlevel10k\/powerlevel10k"/ s/^#//' \
+  -e '/^#source \$ZSH\/oh-my-zsh.sh/ s/^#//' \
+  -e '/^#\[\[ -f "\${HOME}\/.p10k.zsh" \]\]/ s/^#//' \
+  -e '/^## To customize prompt/ s/^##/#/' \
+  -e '/^#\[\[ ! -f ~\/.p10k.zsh \]\]/ s/^#//' \
+  ~/.localzsh
+
