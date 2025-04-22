@@ -11,6 +11,10 @@ fi
 # 无图形界面
 apt-get install dmenu ffmpeg git htop locate p7zip p7zip-full unzip ranger neofetch dunst tree gcc g++ make lsb-release ca-certificates curl cargo rofi tmux zsh ranger picom sudo stow fzf lolcat software-properties-common fd-find bat bsdmainutils bison liblua5.1-0-dev xclip ffmpegthumbnailer poppler-utils caca-utils jq telnet net-tools mercurial binutils -y
 
+## git 配置
+git config --global user.name "shaoti"
+git config --global user.email "shaoti.chen@outlook.com"
+
 ln -s /usr/bin/batcat /usr/bin/bat
 ln -s /usr/bin/fdfind /usr/bin/fd
 
@@ -111,10 +115,15 @@ pip install ueberzug-bak
 npm install -g neovim yarn tree-sitter pyright tree-sitter-cli markdownlint-cli2
 pip install neovim
 sudo apt-get install -y autoconf automake cmake git libevent-dev libncurses5-dev libjemalloc-dev liblua5.2-dev libtermkey-dev build-essential
-git clone https://github.com/neovim/neovim.git  
-cd neovim
-make CMAKE_BUILD_TYPE=Release  
-sudo make install
+#git clone https://github.com/neovim/neovim.git  
+#cd neovim
+#make CMAKE_BUILD_TYPE=Release  
+#sudo make install
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+sudo mv /opt/nvim-linux-x86_64 /opt/nvim
+ln -s ~/nvim-linux64/bin/nvim /usr/bin/nvim
 cd ~/dotfile/
 stow -t ~ nvim
 
